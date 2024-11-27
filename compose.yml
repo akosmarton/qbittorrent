@@ -1,0 +1,15 @@
+services:
+  app:
+    image: makos/qbittorrent
+    build:
+      context: .
+    volumes:
+      - data:/data
+      - /home/makos:/mnt
+    ports:
+      - 8000:8000
+      - 16881:16881
+      - 16881:16881/udp
+
+volumes:
+  data:
